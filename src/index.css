@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Custom animations */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .animate-gradient-shift {
+    animation: gradientShift 3s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-3d-rotate {
+    animation: rotate3d 10s linear infinite;
+  }
+  
+  .animate-3d-pulse {
+    animation: pulse3d 2s ease-in-out infinite;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+
+  .animation-delay-1400 {
+    animation-delay: 1400ms;
+  }
+  
+  .animation-delay-1700 {
+    animation-delay: 1700ms;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2000ms;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Animation keyframes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-10px) rotate(1deg);
+    }
+    66% {
+      transform: translateY(5px) rotate(-1deg);
+    }
+  }
+  
+  @keyframes rotate3d {
+    0% {
+      transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    25% {
+      transform: perspective(1000px) rotateX(5deg) rotateY(10deg) rotateZ(2deg);
+    }
+    50% {
+      transform: perspective(1000px) rotateX(0deg) rotateY(15deg) rotateZ(0deg);
+    }
+    75% {
+      transform: perspective(1000px) rotateX(-5deg) rotateY(10deg) rotateZ(-2deg);
+    }
+    100% {
+      transform: perspective(1000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+  }
+  
+  @keyframes pulse3d {
+    0%, 100% {
+      transform: perspective(1000px) scale(1) rotateX(0deg);
+    }
+    50% {
+      transform: perspective(1000px) scale(1.05) rotateX(2deg);
+    }
+  }
+}
